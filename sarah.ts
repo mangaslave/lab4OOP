@@ -2,7 +2,7 @@ import { NumberGroup } from "./NumberGroup";
 import { CharacterGroup } from "./StringGroup";
 import { LinkedListGroup } from "./linkedlist";
 
-class SortUtil {
+export class SortUtil {
     collection: NumberGroup | CharacterGroup | LinkedListGroup;
   
     constructor(collection: NumberGroup | CharacterGroup | LinkedListGroup) {
@@ -18,18 +18,14 @@ class SortUtil {
         for (let i = 0; i < lastUnsorted; i++) {
           // HANDLE LINKED LIST LOGIC HERE 
               if (this.collection.compare(i, i+1)) {
-                this.collection.swap(i, i++);
+                this.collection.swap(i, i+1);
                 isSorted = false;
               }
             }
-          }
   
           // HANDLE STRING LOGIC HERE
         }
         lastUnsorted--;
       }
-    }
+}
   
-  const sortUtil = new SortUtil([10, 3, -5, 0]);
-  sortUtil.sort();
-  console.log(sorter.collection);
