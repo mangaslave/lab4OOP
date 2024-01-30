@@ -55,7 +55,11 @@ class Node {
     }
   
     compare(leftPos: number, rightPos: number): boolean {
-
+        const leftNode = this.at(leftPos);
+        const rightNode = this.at(rightPos);
+      
+        // Compare the data of the nodes
+        return leftNode.data > rightNode.data;
     }
   
     swap(leftPos: number, rightPos: number): void {
