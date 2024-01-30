@@ -12,9 +12,12 @@ export class CharacterGroup implements ISortable{
     }
     swap(leftPos: number, rightPos: number): void {
         const stringArray = this.data.split("");
-        let tempLeft = this.data[leftPos];
+        let tempLeft = stringArray[leftPos];
         stringArray[leftPos] = stringArray[rightPos];
         stringArray[rightPos] = tempLeft;
+        let newString = stringArray.join('');
+        this.data = newString;
+
         // stringArray.sort(function(a, b) {
         //     return a.toLowerCase().localeCompare(b.toLowerCase());
         // });
